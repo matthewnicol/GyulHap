@@ -3,11 +3,9 @@ var allMatches = [];
 var foundMatches = [];
 var allElements = [];
 var element1, element2, element3;
-var pipe = new Audio("pipe.wav");
-var hit = new Audio("hit.wav");
-var beep = new Audio("beep.wav");
-var bell = new Audio("bell.mp3");
-var bellyes = new Audio("bellyes.mp3");
+var hit = new Audio("audio/hit.wav");
+var beep = new Audio("audio/beep.wav");
+var bellyes = new Audio("audio/bellyes.mp3");
 var score = 0;
 
 Array.prototype.arrIndexOf = function (val) {
