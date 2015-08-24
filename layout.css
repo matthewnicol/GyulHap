@@ -1,0 +1,84 @@
+body {
+    background: #7F3D00;
+}
+
+h1 {
+        color: #000000;
+    font-size: 250%;
+    padding-left: 50px;
+}
+
+span {
+    cursor: pointer;
+    position: relative;
+    top: -30px;
+}
+
+h2 {
+    color: #000000;
+    font-size: 100%;
+    padding-left: 10px;
+    width: 200px;
+}
+    
+div#winscontainer {
+    position: relative;
+    float: left;
+    height: inherit;
+    width: 125px; 
+}
+
+div#gamecontainer {
+    border: 2px ridge #C0C0C0;
+    width: 600px;
+    height: 500px;
+    float: left;
+}
+
+div#answercontainer {
+    background: #c4c7ce;
+    height: inherit;
+    float: left;
+    width: 125px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#gameboard {
+    background: #74777c;
+    height: inherit;
+    float: left;
+    width: 475px;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#scoreboard {
+    border: 2px ridge #C0C0C0;
+    background: #74777c;
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 5vw;
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.hapimage {
+    border: 1px solid black;
+    margin: 2px;
+    margin-left: 4px;
+    width: 150px;
+    height: 150px;
+    float: left;
+    font-size: 10vw;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+ */
+    curser: pointer;
+    line-height: 150px;
+}
