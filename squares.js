@@ -71,21 +71,42 @@ function unselectAll() {
     element3 = "";
 }
 
-function generateSquare() {
+function generateSquare(elementList) {
     'use strict';
-    var div, imgList, foregroundList, backgroundList, text;
+    var div, imgList, foregroundList, backgroundList, text, background, foreground;
     imgList = ["<span>&#9728;</span>", "<span>&#9770;</span>", "<span>&#9733;</span>"];
     foregroundList = ["#000000", "#7F0800", "#00017F"];
     backgroundList = ["#FFDF4C", "#92CC51", "#516CCC"];
+
+    while (1) {
+            background = backgroundList[getRandom()-1];
+            foreground = foregroundList[getRandom()-1];
+            text = imgList[getRandom()-1];
+
+            var repeat = 0;
+            for (var i = 0; i < elementList.length; i++) {
+            if (background === elementList[i][0] && foreground === elementList[i][1] && text === elementList[i][2]) {
+                repeat = 1;
+                break;
+            }
+        }
+        if (repeat === 1) continue;
+        return [background, foreground, text];
+    }
+}
+
+function squareToDiv(input) {
+    background = input[0];
+    foreground = input[1];
+    text = input[2]
     div = document.createElement("div");
-    text = getRandom() - 1;
-    div.setAttribute("data-character", imgList[text]);
-    div.style.backgroundColor = backgroundList[getRandom() - 1];
-    div.style.color = foregroundList[getRandom() - 1];
-    div.innerHTML += imgList[text];
-    div.src = imgList[getRandom() - 1];
+    div.setAttribute("data-character", text);
+    div.style.backgroundColor = background;
+    div.style.color = foreground;
+    div.innerHTML += text;
+    div.src = text;
     div.onclick = function () { clickElement(this); };
-    div.className = "hapimage"; // front" + getRandom().toString() + " back" + getRandom().toString();
+    div.className = "hapimage";
     return div;
 }
 
@@ -213,17 +234,20 @@ function clickElement(element) {
 
 function newGame() {
     'use strict';
-    var i, div, perms, oldmatches, newmatches, hapbutton;
+    var i, div, perms, oldmatches, newmatches, hapbutton, allRaw;
     document.getElementById("answercontainer").innerHTML = "";
     document.getElementById("gameboard").innerHTML = "";
     div = document.getElementById("gameboard");
     updateScore(0);
     allElements = [];
+    allRaw = [];
     allMatches = [];
     foundMatches = [];
     
     for (i = 0; i < 9; i = i + 1) {
-        allElements.push(generateSquare());
+        var element = generateSquare(allRaw);
+        allRaw.push(element);
+        allElements.push(squareToDiv(element));
         allElements[i].setAttribute("data-position", i + 1);
         div.appendChild(allElements[i]);
     }
