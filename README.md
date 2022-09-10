@@ -1,5 +1,7 @@
 # GyulHap
 
+[Demo](http://github.com/matthewnicol/GyulHap.git/blob/master/demo.png?raw=true)
+
 What is it?
 --------------
 
