@@ -1,6 +1,6 @@
 # GyulHap
 
-![Demo](http://github.com/matthewnicol/GyulHap.git/raw/master/demo.png)
+![Demo](http://github.com/matthewnicol/GyulHap/raw/master/demo.png)
 
 What is it?
 --------------
